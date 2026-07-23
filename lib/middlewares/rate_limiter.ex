@@ -53,7 +53,7 @@ defmodule Rajska.RateLimiter do
     identifier = get_identifier(resolution, config[:keys], config[:id])
     error_msg = Keyword.get(config, :error_msg, "Too many requests")
 
-    case Hammer.hit("query:#{identifier}", scale_ms, limit) do
+    case Rajska.RateLimit.hit("query:#{identifier}", scale_ms, limit) do
       {:allow, _count} -> resolution
       {:deny, _limit} -> Resolution.put_result(resolution, {:error, error_msg})
     end
