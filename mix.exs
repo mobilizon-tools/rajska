@@ -6,7 +6,7 @@ defmodule Rajska.MixProject do
   def project do
     [
       app: :rajska,
-      version: "1.3.3",
+      version: "1.3.4",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -52,8 +52,8 @@ defmodule Rajska.MixProject do
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
       {:credo, "~> 1.6.0", only: [:dev, :test], runtime: false},
       {:absinthe, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7"},
-      {:excoveralls, "~> 0.11", only: :test},
-      {:hammer, "~> 6.0", optional: true},
+      {:excoveralls, "~> 0.11 or ~> 0.18", only: :test},
+      {:hammer, "~> 6.0 or ~> 7.4", optional: true},
       {:mock, "~> 0.3.0", only: :test}
     ]
   end
