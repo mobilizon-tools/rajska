@@ -6,7 +6,7 @@ defmodule Rajska.MixProject do
   def project do
     [
       app: :rajska,
-      version: "1.3.4",
+      version: "1.3.4.1",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
